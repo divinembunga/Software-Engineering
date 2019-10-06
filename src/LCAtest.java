@@ -1,8 +1,8 @@
 import static org.junit.Assert.*;
-import org.junit.Test;
-//import org.junit.runner.RunWith;
-//import org.junit.runners.JUnit4;
 
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 //-------------------------------------------------------------------------
 /**
  *  Test class for Lowest Common Ancestor
@@ -10,15 +10,15 @@ import org.junit.Test;
  *  @author  Divine Mbunga
  */
 
-//@RunWith(JUnit4.class)
-
+@RunWith(JUnit4.class)
 
 public class LCAtest {
  
 	@Test
 	public void testBasicTree() {
 		//Testing a very basic typical tree
-		BinaryTree tree = new BinaryTree();
+		LCA tree = new LCA();
+		tree.root = new Node(1);
 		tree.root.left = new Node(2); 
         tree.root.right = new Node(3); 
         tree.root.left.left = new Node(4); 
@@ -31,5 +31,29 @@ public class LCAtest {
         assertEquals("LCA(3,4)",1,tree.findLCA(3,4));
         assertEquals("LCA(2,4)",2,tree.findLCA(2,4));
 	}
+	
+	@Test
+	public void testNullTree(){
+		LCA tree = new LCA();
+		tree.root = null;
+		
+		//should return -1 as the root is null- non existent
+		assertEquals("root is null",-1,tree.findLCA(4,6));
+	}
+	
+	@Test
+	public void testSmallTree(){
+		LCA tree = new LCA();
+		tree.root = new Node(1);
+		tree.root.left = new Node(2); 
+        tree.root.right = new Node(3);
+        
+        assertEquals("LCA(2,3)",1,tree.findLCA(2,3));
+	}
+	
+	/*To add
+	 * -left sided tree
+	 * -right sided tree
+	 * -big tree*/
 
 }
