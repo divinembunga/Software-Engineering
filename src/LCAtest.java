@@ -13,6 +13,8 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 
 public class LCAtest {
+	/*To add
+	 * -root with three nodes- its okay if it fails*/
  
 	@Test
 	public void testBasicTree() {
@@ -51,9 +53,33 @@ public class LCAtest {
         assertEquals("LCA(2,3)",1,tree.findLCA(2,3));
 	}
 	
-	/*To add
-	 * -left sided tree
-	 * -right sided tree
-	 * -big tree*/
+	@Test
+	public void testLeftTree(){
+		LCA tree = new LCA();
+		tree.root = new Node(1);
+		tree.root.left = new Node(2);
+		tree.root.left.left = new Node(3);
+		tree.root.left.left.left = new Node(4);
+		tree.root.left.left.left.left = new Node(5);
+		
+		assertEquals("LCA(3,5)",2,tree.findLCA(3,5));
+		//fails says ans = 3
+	}
+	
+	@Test
+	public void testRightTree(){
+		LCA tree = new LCA();
+		tree.root = new Node(4);
+		tree.root.right = new Node(6);
+		tree.root.right.right = new Node(5);
+		tree.root.right.right.right = new Node(1);
+		tree.root.right.right.right.right = new Node(7);
+		
+		assertEquals("LCA(6,5)",4,tree.findLCA(6,5));
+		//fails ans =6
+		
+	}
+	
+
 
 }
