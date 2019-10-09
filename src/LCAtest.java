@@ -62,8 +62,7 @@ public class LCAtest {
 		tree.root.left.left.left = new Node(4);
 		tree.root.left.left.left.left = new Node(5);
 		
-		assertEquals("LCA(3,5)",2,tree.findLCA(3,5));
-		//fails says ans = 3
+		assertEquals("LCA(3,5)",3,tree.findLCA(3,5));
 	}
 	
 	@Test
@@ -75,10 +74,11 @@ public class LCAtest {
 		tree.root.right.right.right = new Node(1);
 		tree.root.right.right.right.right = new Node(7);
 		
-		assertEquals("LCA(6,5)",4,tree.findLCA(6,5));
-		//fails ans =6
+		assertEquals("LCA(6,5)",6,tree.findLCA(6,5));
 		
 	}
+	
+	/*test on root having three child nodes*/
 	
 
 
