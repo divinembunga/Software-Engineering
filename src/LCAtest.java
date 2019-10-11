@@ -78,7 +78,10 @@ public class LCAtest {
 		
 	}
 	
-	/*test on root having three child nodes*/
+	/*test on root having three child nodes
+	 * -This code cannot comply with this test as each tree 
+	 * can only consist of a root with a left and right 
+	 * node i.e two children nodes.*/
 	
 
 
