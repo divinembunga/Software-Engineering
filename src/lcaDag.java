@@ -1,3 +1,6 @@
+// Java Program for Lowest Common Ancestor in a Directed Acyclic Graph
+// A O(n) solution to find LCA of two given values n1 and n2 
+// This code is credited to Devin Connolly.
 import java.util.*;
 
 public class lcaDag {
@@ -170,7 +173,7 @@ public class lcaDag {
 		}
 	 
 	 public lcaDag reverse() {
-		 lcaDag reverse = new lcaDag(V); //new dag of same parameter
+		 lcaDag reverse = new lcaDag(V); 
 	        for (int v = 0; v < V; v++) {
 	            for (int w : adj(v)) {
 	                reverse.addEdge(w, v); //reverse the direction of the edges
@@ -179,5 +182,4 @@ public class lcaDag {
 	        return reverse;
 	    }
 	 
-	 // Source used: https://github.com/connold9/LCA/blob/master/DAG.java 
 }
