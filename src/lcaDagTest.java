@@ -62,8 +62,20 @@ public class lcaDagTest {
 		
 		//Check for no common ancestors
 		assertEquals("when one node doesn't exist", -1, lca2.findLCA(7, 3));
+	}
+	
+	@Test
+	public void testOutDegree(){
+		lcaDag testDegree = new lcaDag(5);
+		assertEquals("", -1, testDegree.outdegree(8));	
+	}
+	
+	
+	@Test(expected=Exception.class)
+	public void exceptionTest(){
+		//Can't make a directed graph with less than 0 vertices
+		lcaDag test3 = new lcaDag(-4);
 	}			
-				
 	
 	@Test
 	public void testLCA(){
