@@ -21,14 +21,33 @@ public class lcaDagTest {
 	    assertEquals("",ans, test.adj(4).toString());
     }
 	
-
+	@Test
+	public void testsForCycle(){
+		lcaDag cyclic = new lcaDag(20);
+		cyclic.addEdge(0, 1);
+		cyclic.addEdge(1, 2);
+		cyclic.addEdge(2, 0);
+		
+		//0 is first vertex
+		cyclic.findCycle(0);
+		
+	
+		assertTrue(cyclic.hasCycle());
+		
+		lcaDag acyclic = new lcaDag(20);
+		acyclic.addEdge(0, 1);
+		acyclic.addEdge(1, 4);
+		acyclic.addEdge(2, 5);
+		//0 is first vertex
+		acyclic.findCycle(0);
+		//No Cycle,return false
+		assertFalse(acyclic.hasCycle());
+	}
+	
 	
 	@Test
 	public void testLCAForNoCommonAncestors(){
 		lcaDag lca2 = new lcaDag(11);
-		//-----1----5----
-		//---0-|---/-----
-		//-----2--3---4--
 		lca2.addEdge(0, 1);
 		lca2.addEdge(0, 2);
 		lca2.addEdge(1, 2);
@@ -45,7 +64,7 @@ public class lcaDagTest {
 		assertEquals("when one node doesn't exist", -1, lca2.findLCA(7, 3));
 	}			
 				
-	//fails
+	
 	@Test
 	public void testLCA(){
 		lcaDag lca = new lcaDag(10);
