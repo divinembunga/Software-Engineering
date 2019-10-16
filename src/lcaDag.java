@@ -162,6 +162,7 @@ public class lcaDag {
 				for(int t = 0; t<wPath.size(); t++){		
 					if(vPath.get(i)==wPath.get(t)){
 						commonAncestors.add(vPath.get(i));
+						found=true;
 						}
 				}
 			}
