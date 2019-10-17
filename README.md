@@ -15,4 +15,4 @@ The tasks for this assignment are:
 - [x] biography of a software engineer that inspires me
 
 
-Note that a test case that could nit be resolved in this program is when the root node has three child nodes. The reason being that the implementation only supports two child nodes.
+Note that a test case that could not be resolved in this program is when the root node contains three child nodes. The reason being that the implementation only supports two child nodes.
