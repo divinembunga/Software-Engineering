@@ -17,6 +17,7 @@ public class lcaDagTest {
 	    assertEquals("", 2, test.outdegree(4));
 	    assertEquals("", 5, test.E());
 	    assertEquals("", 10, test.V());
+	    
 	    String ans = "[5, 6]";
 	    assertEquals("",ans, test.adj(4).toString());
     }
@@ -42,7 +43,6 @@ public class lcaDagTest {
 		
 		//0 is first vertex
 		cyclic.findCycle(0);
-		
 	
 		assertTrue(cyclic.hasCycle());
 		
@@ -50,8 +50,10 @@ public class lcaDagTest {
 		acyclic.addEdge(0, 1);
 		acyclic.addEdge(1, 4);
 		acyclic.addEdge(2, 5);
+		
 		//0 is first vertex
 		acyclic.findCycle(0);
+		
 		//No Cycle,return false
 		assertFalse(acyclic.hasCycle());
 	}
