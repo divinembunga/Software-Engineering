@@ -23,18 +23,6 @@ public class lcaDagTest {
     }
 	
 	@Test
-	public void testAddEdge(){
-		lcaDag testEdge = new lcaDag(5);
-		testEdge.addEdge(0, 1);
-		
-		assertEquals("Testing edge count is 1", 1, testEdge.E());
-		
-		testEdge.addEdge(1, 2);
-		
-		assertEquals("Testing edge count is 2", 2, testEdge.E());
-	}
-	
-	@Test
 	public void testsForCycle(){
 		lcaDag cyclic = new lcaDag(20);
 		cyclic.addEdge(0, 1);
@@ -56,6 +44,18 @@ public class lcaDagTest {
 		
 		//No Cycle,return false
 		assertFalse(acyclic.hasCycle());
+	}
+	
+	@Test
+	public void testAddEdge(){
+		lcaDag testEdge = new lcaDag(5);
+		testEdge.addEdge(0, 1);
+		
+		assertEquals("Testing edge count is 1", 1, testEdge.E());
+		
+		testEdge.addEdge(1, 2);
+		
+		assertEquals("Testing edge count is 2", 2, testEdge.E());
 	}
 	
 	@Test
