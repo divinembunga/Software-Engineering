@@ -74,7 +74,7 @@ public class lcaDagTest {
 	@Test(expected=Exception.class)
 	public void exceptionTest(){
 		//Can't make a directed graph with less than 0 vertices
-		lcaDag test3 = new lcaDag(-4);
+		lcaDag testException = new lcaDag(-4);
 	}			
 	
 	@Test
@@ -92,10 +92,10 @@ public class lcaDagTest {
 		lca.addEdge(7, 8);
 		lca.addEdge(8, 9);
 					
-		//assertEquals("4 and 5", 1, lca.findLCA(5, 4));
-		//assertEquals("7 and 8", 7, lca.findLCA(8, 7));
-		//assertEquals("6 and 8", 6, lca.findLCA(6, 8));
-		assertEquals("Special case", 2, lca.findLCA(2,2));
+	    assertEquals("4 and 2", 1, lca.findLCA(2, 4));
+		assertEquals("7 and 8", 7, lca.findLCA(8, 7));
+		assertEquals("9 and 8", 8, lca.findLCA(9, 8));
+		assertEquals("Special case", 3, lca.findLCA(3,3));
 	}
 			
 			
