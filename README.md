@@ -12,7 +12,7 @@ The tasks for this assignment are:
 - [x] implemetation and test code
 - [x] graph structured as a binary tree
 - [x] step wise development
-- [x] step wise development
+- [x] biography of a software engineer that inspires me
 
 
 Note that a test case that could nit be resolved in this program is when the root node has three child nodes. The reason being that the implementation only supports two child nodes.
